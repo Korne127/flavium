@@ -155,7 +155,7 @@ private suspend fun PipelineContext<Unit, ApplicationCall>.submitController(tena
                         val pos = Jobs.select(
                             (Jobs.status eq -1) and
                                     (Jobs.rollingNumber less task.rollingNumber)
-                        ).count()
+                        ).count() + 1
                         task to pos
                     }
 
